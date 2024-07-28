@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Extract Cookie Value",
+  "version": "1.0",
+  "description": "Extracts a specified cookie value from a specified URL.",
+  "permissions": [
+    "activeTab",
+    "cookies",
+    "tabs",
+    "clipboardWrite",
+    "http://*/",
+    "https://*/"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
